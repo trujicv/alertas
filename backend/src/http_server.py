@@ -36,11 +36,22 @@ class HTTPServer:
             # Ruta raíz - servir index.html
             self.app.router.add_get('/', self._handle_index)
             
-            # Rutas para archivos estáticos
-            self.app.router.add_static('/css', self.static_dir / 'css', name='css')
-            self.app.router.add_static('/js', self.static_dir / 'js', name='js')
-            self.app.router.add_static('/fonts', self.static_dir / 'fonts', name='fonts', show_index=False)
-            self.app.router.add_static('/images', self.static_dir / 'images', name='images', show_index=False)
+            # Rutas para archivos estáticos (solo si existen)
+            css_dir = self.static_dir / 'css'
+            if css_dir.exists():
+                self.app.router.add_static('/css', css_dir, name='css')
+            
+            js_dir = self.static_dir / 'js'
+            if js_dir.exists():
+                self.app.router.add_static('/js', js_dir, name='js')
+            
+            fonts_dir = self.static_dir / 'fonts'
+            if fonts_dir.exists():
+                self.app.router.add_static('/fonts', fonts_dir, name='fonts', show_index=False)
+            
+            images_dir = self.static_dir / 'images'
+            if images_dir.exists():
+                self.app.router.add_static('/images', images_dir, name='images', show_index=False)
             
             # Iniciar servidor
             self.runner = web.AppRunner(self.app)
