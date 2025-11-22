@@ -1,0 +1,7 @@
+# Dependencias del Sistema de Alertas de Email
+
+# WebSocket server
+websockets==12.0
+
+# HTTP server
+aiohttp==3.9.1

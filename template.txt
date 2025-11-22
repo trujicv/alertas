@@ -1,0 +1,39 @@
+alertas/
+├── backend/
+│   ├── src/
+│   │   ├── __init__.py
+│   │   ├── main.py                 # Punto de entrada principal
+│   │   ├── email_monitor.py        # Monitor IMAP principal
+│   │   ├── storage_manager.py      # Gestión de persistencia
+│   │   ├── websocket_server.py     # Servidor WebSocket
+│   │   ├── config_loader.py        # Cargador de configuración
+│   │   └── alert_system.py         # Sistema de notificaciones
+│   ├── data/
+│   │   ├── emails.json            # Correos persistidos
+│   │   ├── config.json            # Configuración de la app
+|   |   ├── schedule.json          # Actividades programadas
+│   │   └── logs/
+│   │       ├── app.log            # Logs de aplicación
+│   │       └── errors.log         # Logs de errores
+│   ├── static/                    # Frontend estático
+│   │   ├── css/
+│   │   │   └── styles.css
+│   │   ├── js/
+│   │   │   ├── app.js
+│   │   │   └── websocket-client.js
+│   │   ├── sounds/
+│   │   │   ├── alarm.mp3
+│   │   │   └── notification.mp3
+│   │   └── index.html
+│   ├── requirements.txt           # Dependencias Python
+│   └── run.py                     # Script de inicio
+├── scripts/
+│   ├── install.sh                 # Script de instalación
+│   ├── start_service.sh           # Iniciar servicio
+│   ├── stop_service.sh            # Detener servicio
+│   ├── status_service.sh          # Estado del servicio
+│   └── setup_venv.sh              # Configurar entorno virtual
+├── logs/ -> backend/data/logs/    # Enlace simbólico
+├── .gitignore
+├── README.md
+└── email-watcher.service          # Config systemd

@@ -1,0 +1,102 @@
+2025-11-22 15:16:18 - src.main - INFO - Logging configurado: nivel=INFO
+2025-11-22 15:16:18 - src.main - INFO - ============================================================
+2025-11-22 15:16:18 - src.main - INFO - Sistema de Alertas de Email - Iniciando
+2025-11-22 15:16:18 - src.main - INFO - ============================================================
+2025-11-22 15:16:18 - src.main - INFO - Iniciando componentes...
+2025-11-22 15:16:18 - src.main - WARNING - ADVERTENCIA: Configuración de email incompleta. Configure desde la interfaz web.
+2025-11-22 15:16:18 - src.main - INFO - Gestor de actividades disponible
+2025-11-22 15:16:18 - storage_manager - ERROR - Error al parsear schedule.json: Expecting value: line 1 column 1 (char 0)
+2025-11-22 15:16:18 - src.main - INFO - Actividades registradas: 0
+2025-11-22 15:16:18 - src.main - INFO - Inicializando servidor HTTP...
+2025-11-22 15:16:18 - http_server - ERROR - Error al iniciar servidor HTTP: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist
+2025-11-22 15:16:18 - src.main - ERROR - Error durante startup: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist
+Traceback (most recent call last):
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 564, in __init__
+    directory = Path(directory).expanduser().resolve(strict=True)
+  File "C:\Python313\Lib\pathlib\_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 738, in realpath
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'c:\\Users\\truji\\Proyectos\\alertas\\backend\\static\\fonts'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\truji\Proyectos\alertas\backend\src\main.py", line 145, in startup
+    await self.http_server.start()
+  File "c:\Users\truji\Proyectos\alertas\backend\src\http_server.py", line 42, in start
+    self.app.router.add_static('/fonts', self.static_dir / 'fonts', name='fonts', show_index=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 1205, in add_static
+    resource = StaticResource(
+        prefix,
+    ...<6 lines>...
+        append_version=append_version,
+    )
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 566, in __init__
+    raise ValueError(f"'{directory}' does not exist") from error
+ValueError: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist
+2025-11-22 15:16:18 - src.main - ERROR - Error fatal en la aplicación: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist
+Traceback (most recent call last):
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 564, in __init__
+    directory = Path(directory).expanduser().resolve(strict=True)
+  File "C:\Python313\Lib\pathlib\_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 738, in realpath
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'c:\\Users\\truji\\Proyectos\\alertas\\backend\\static\\fonts'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\truji\Proyectos\alertas\backend\src\main.py", line 220, in run
+    await self.startup()
+  File "c:\Users\truji\Proyectos\alertas\backend\src\main.py", line 145, in startup
+    await self.http_server.start()
+  File "c:\Users\truji\Proyectos\alertas\backend\src\http_server.py", line 42, in start
+    self.app.router.add_static('/fonts', self.static_dir / 'fonts', name='fonts', show_index=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 1205, in add_static
+    resource = StaticResource(
+        prefix,
+    ...<6 lines>...
+        append_version=append_version,
+    )
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 566, in __init__
+    raise ValueError(f"'{directory}' does not exist") from error
+ValueError: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist
+2025-11-22 15:16:18 - src.main - INFO - Iniciando shutdown...
+2025-11-22 15:16:18 - src.main - INFO - Deteniendo servidor HTTP...
+2025-11-22 15:16:18 - http_server - INFO - Servidor HTTP detenido
+2025-11-22 15:16:18 - src.main - INFO - ✓ Shutdown completado correctamente
+2025-11-22 15:16:18 - root - ERROR - Error en main: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist
+Traceback (most recent call last):
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 564, in __init__
+    directory = Path(directory).expanduser().resolve(strict=True)
+  File "C:\Python313\Lib\pathlib\_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 738, in realpath
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'c:\\Users\\truji\\Proyectos\\alertas\\backend\\static\\fonts'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\truji\Proyectos\alertas\backend\src\main.py", line 235, in main
+    await app.run()
+  File "c:\Users\truji\Proyectos\alertas\backend\src\main.py", line 220, in run
+    await self.startup()
+  File "c:\Users\truji\Proyectos\alertas\backend\src\main.py", line 145, in startup
+    await self.http_server.start()
+  File "c:\Users\truji\Proyectos\alertas\backend\src\http_server.py", line 42, in start
+    self.app.router.add_static('/fonts', self.static_dir / 'fonts', name='fonts', show_index=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 1205, in add_static
+    resource = StaticResource(
+        prefix,
+    ...<6 lines>...
+        append_version=append_version,
+    )
+  File "C:\Python313\Lib\site-packages\aiohttp\web_urldispatcher.py", line 566, in __init__
+    raise ValueError(f"'{directory}' does not exist") from error
+ValueError: 'c:\Users\truji\Proyectos\alertas\backend\static\fonts' does not exist

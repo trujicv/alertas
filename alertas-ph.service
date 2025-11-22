@@ -1,0 +1,28 @@
+[Unit]
+Description=Sistema de Alertas de Email - Power Cloud and Hosting
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/alertas
+Environment="PATH=/opt/alertas/venv/bin:/usr/bin"
+ExecStart=/opt/alertas/venv/bin/python /opt/alertas/backend/run.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=alertas-ph
+
+# Límites de recursos
+LimitNOFILE=65536
+Nice=0
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerhost - Alertas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Tab Navigation -->
+    <header class="app-header">
+        <div class="header-brand">
+            <i class="fa-solid fa-cloud"></i>
+            <h1>Power Cloud and Hosting</h1>
+        </div>
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="inicio">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="tab-btn" data-tab="buzon">
+                <i class="fas fa-inbox"></i>
+                <span>Buzón</span>
+            </button>
+            <button class="tab-btn" data-tab="calendario">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendario</span>
+            </button>
+            <button class="tab-btn" data-tab="configuracion">
+                <i class="fas fa-cog"></i>
+                <span>Configuración</span>
+            </button>
+        </nav>
+        <div class="header-status">
+            <span class="status-dot"></span>
+            <span>Conectado</span>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="app-container">
+        <!-- Inicio Tab -->
+        <section id="inicio" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <i class="fas fa-bell"></i>
+                    <div>
+                        <h3>0</h3>
+                        <p>Notificaciones</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-calendar-check"></i>
+                    <div>
+                        <h3>0</h3>
+                        <p>Actividades</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-emails-section">
+                <h3><i class="fas fa-envelope"></i> Últimos Correos Recibidos</h3>
+                <div class="email-preview-list">
+                    <div class="email-preview unread">
+                        <div class="email-avatar">JD</div>
+                        <div class="email-content">
+                            <div class="email-meta">
+                                <strong>Juan Díaz</strong>
+                                <span>10:45 AM</span>
+                            </div>
+                            <p class="email-subject">Propuesta de proyecto Q4 2025</p>
+                            <p class="email-text">Adjunto encontrarás la propuesta actualizada para el proyecto...</p>
+                        </div>
+                    </div>
+                    <div class="email-preview">
+                        <div class="email-avatar">MC</div>
+                        <div class="email-content">
+                            <div class="email-meta">
+                                <strong>María Castro</strong>
+                                <span>9:30 AM</span>
+                            </div>
+                            <p class="email-subject">RE: Reunión de seguimiento</p>
+                            <p class="email-text">Confirmo asistencia para la reunión del viernes próximo...</p>
+                        </div>
+                    </div>
+                    <div class="email-preview">
+                        <div class="email-avatar">SY</div>
+                        <div class="email-content">
+                            <div class="email-meta">
+                                <strong>Sistema Automático</strong>
+                                <span>8:15 AM</span>
+                            </div>
+                            <p class="email-subject">Reporte diario de actividad</p>
+                            <p class="email-text">Resumen de las actividades del sistema en las últimas 24 horas...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buzón Tab -->
+        <section id="buzon" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Buzón de Correo</h2>
+                <div class="section-actions">
+                    <input type="text" class="search-box" placeholder="Buscar correos...">
+                    <button class="btn-primary"><i class="fas fa-sync"></i> Actualizar</button>
+                </div>
+            </div>
+
+            <div class="mailbox">
+                <div class="mailbox-filters">
+                    <button class="filter active">Todos</button>
+                    <button class="filter">No leídos</button>
+                    <button class="filter">Importantes</button>
+                </div>
+
+                <div class="email-list">
+                    <div class="email-item unread">
+                        <div class="email-avatar">AD</div>
+                        <div class="email-info">
+                            <div class="email-row">
+                                <strong>Administrador</strong>
+                                <span>11:20 AM</span>
+                            </div>
+                            <p class="subject">Actualización del sistema</p>
+                            <p class="snippet">Se ha completado la actualización del sistema...</p>
+                        </div>
+                        <span class="tag important">Importante</span>
+                    </div>
+
+                    <div class="email-item">
+                        <div class="email-avatar">PR</div>
+                        <div class="email-info">
+                            <div class="email-row">
+                                <strong>Pedro Ramírez</strong>
+                                <span>Ayer</span>
+                            </div>
+                            <p class="subject">Consulta sobre facturación</p>
+                            <p class="snippet">Necesito información sobre el estado de la factura...</p>
+                        </div>
+                    </div>
+
+                    <div class="email-item">
+                        <div class="email-avatar">LM</div>
+                        <div class="email-info">
+                            <div class="email-row">
+                                <strong>Laura Martínez</strong>
+                                <span>Ayer</span>
+                            </div>
+                            <p class="subject">Documentación del proyecto</p>
+                            <p class="snippet">Adjunto la documentación técnica solicitada...</p>
+                        </div>
+                    </div>
+
+                    <div class="email-item">
+                        <div class="email-avatar">NO</div>
+                        <div class="email-info">
+                            <div class="email-row">
+                                <strong>Notificaciones</strong>
+                                <span>2 días</span>
+                            </div>
+                            <p class="subject">Resumen semanal</p>
+                            <p class="snippet">Tu resumen semanal de actividad está listo...</p>
+                        </div>
+                        <span class="tag auto">Auto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendario Tab -->
+        <section id="calendario" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">Calendario de Actividades</h2>
+                <button class="btn-primary" id="btn-new-activity">
+                    <i class="fas fa-plus"></i> Nueva Actividad
+                </button>
+            </div>
+
+            <div class="calendar-layout">
+                <div class="calendar-view">
+                    <div class="calendar-controls">
+                        <button class="btn-icon"><i class="fas fa-chevron-left"></i></button>
+                        <h3>Noviembre 2025</h3>
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <div class="day-header">L</div>
+                        <div class="day-header">M</div>
+                        <div class="day-header">X</div>
+                        <div class="day-header">J</div>
+                        <div class="day-header">V</div>
+                        <div class="day-header">S</div>
+                        <div class="day-header">D</div>
+
+                        <div class="day"></div>
+                        <div class="day"></div>
+                        <div class="day"></div>
+                        <div class="day"></div>
+                        <div class="day">1</div>
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day today">22</div>
+                        <div class="day">23</div>
+                        <div class="day">24</div>
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+                        <div class="day">30</div>
+                    </div>
+                </div>
+
+                <div class="activities-panel">
+                    <h3>Próximas Actividades</h3>
+                    <div class="activity-list">
+                        <div class="activity-card">
+                            <div class="activity-date">
+                                <span class="day">24</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Revisión mensual</h4>
+                                <p>10:00 AM</p>
+                            </div>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-date">
+                                <span class="day">26</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Reunión de equipo</h4>
+                                <p>2:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-date">
+                                <span class="day">28</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Presentación de resultados</h4>
+                                <p>4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Configuración Tab -->
+        <section id="configuracion" class="tab-content">
+            <h2 class="section-title">Configuración del Sistema</h2>
+
+            <div class="config-grid">
+                <div class="config-section">
+                    <h3><i class="fas fa-envelope-open-text"></i> Configuración de Email</h3>
+                    <div class="form-fields">
+                        <div class="field">
+                            <label>Servidor IMAP</label>
+                            <input type="text" placeholder="imap.gmail.com">
+                        </div>
+                        <div class="field">
+                            <label>Puerto</label>
+                            <input type="number" placeholder="993">
+                        </div>
+                        <div class="field">
+                            <label>Dirección de correo</label>
+                            <input type="email" placeholder="usuario@ejemplo.com">
+                        </div>
+                        <div class="field">
+                            <label>Contraseña</label>
+                            <input type="password" placeholder="••••••••">
+                        </div>
+                        <div class="field-check">
+                            <input type="checkbox" id="ssl" checked>
+                            <label for="ssl">Usar SSL/TLS</label>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-save"></i> Guardar configuración
+                        </button>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3><i class="fas fa-server"></i> Configuración del Servidor</h3>
+                    <div class="form-fields">
+                        <div class="field">
+                            <label>Host WebSocket</label>
+                            <input type="text" value="0.0.0.0">
+                        </div>
+                        <div class="field">
+                            <label>Puerto WebSocket</label>
+                            <input type="number" value="8765">
+                        </div>
+                        <div class="field">
+                            <label>Intervalo de chequeo (seg)</label>
+                            <input type="number" value="30">
+                        </div>
+                        <div class="field">
+                            <label>Timeout inactividad (seg)</label>
+                            <input type="number" value="300">
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-save"></i> Guardar configuración
+                        </button>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3><i class="fas fa-file-alt"></i> Configuración de Logs</h3>
+                    <div class="form-fields">
+                        <div class="field">
+                            <label>Nivel de logging</label>
+                            <select>
+                                <option>DEBUG</option>
+                                <option selected>INFO</option>
+                                <option>WARNING</option>
+                                <option>ERROR</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Tamaño máximo archivo (MB)</label>
+                            <input type="number" value="10">
+                        </div>
+                        <div class="field">
+                            <label>Número de backups</label>
+                            <input type="number" value="5">
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-save"></i> Guardar configuración
+                        </button>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3><i class="fas fa-tools"></i> Acciones del Sistema</h3>
+                    <div class="action-list">
+                        <button class="btn-action">
+                            <i class="fas fa-sync"></i> Reiniciar monitor
+                        </button>
+                        <button class="btn-action">
+                            <i class="fas fa-database"></i> Limpiar cache
+                        </button>
+                        <button class="btn-action">
+                            <i class="fas fa-download"></i> Exportar configuración
+                        </button>
+                        <button class="btn-danger">
+                            <i class="fas fa-trash-alt"></i> Eliminar todos los correos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Nueva Actividad -->
+    <div id="modal-activity" class="modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Nueva Actividad</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="field">
+                    <label>Título</label>
+                    <input type="text" id="activity-title" placeholder="Título de la actividad">
+                </div>
+                <div class="field">
+                    <label>Descripción</label>
+                    <textarea id="activity-desc" rows="4" placeholder="Descripción detallada"></textarea>
+                </div>
+                <div class="field">
+                    <label>Fecha y hora</label>
+                    <input type="datetime-local" id="activity-datetime">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancelar</button>
+                <button class="btn-primary" id="save-activity">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/websocket-client.js"></script>
+    <script>
+        // Navegación básica entre pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Función para cambiar de pestaña
+            function switchTab(targetTab) {
+                // Remover clase active de todos los botones y contenidos
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Agregar clase active al botón correspondiente
+                const activeButton = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+                
+                // Mostrar el contenido correspondiente
+                const targetContent = document.getElementById(targetTab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            }
+            
+            // Event listeners para los botones de pestaña
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    switchTab(targetTab);
+                });
+            });
+            
+            // Activar la primera pestaña por defecto
+            if (tabButtons.length > 0) {
+                const firstTab = tabButtons[0].getAttribute('data-tab');
+                switchTab(firstTab);
+            }
+            
+            // Modal nueva actividad
+            const btnNewActivity = document.getElementById('btn-new-activity');
+            const modal = document.getElementById('modal-activity');
+            const closeModalBtns = document.querySelectorAll('.close-modal');
+            
+            if (btnNewActivity) {
+                btnNewActivity.addEventListener('click', function() {
+                    modal.classList.add('active');
+                });
+            }
+            
+            closeModalBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    modal.classList.remove('active');
+                });
+            });
+            
+            // Cerrar modal al hacer click fuera
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

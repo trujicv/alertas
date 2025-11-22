@@ -1,0 +1,27 @@
+{
+  "master_credentials": {
+    "username": "admin",
+    "password": "changeme123"
+  },
+  "email": {
+    "server": "imap.gmail.com",
+    "port": 993,
+    "address": "",
+    "password": "",
+    "ssl": true
+  },
+  "websocket": {
+    "host": "0.0.0.0",
+    "port": 8765
+  },
+  "logging": {
+    "level": "INFO",
+    "max_file_size_mb": 10,
+    "backup_count": 5
+  },
+  "monitor": {
+    "check_interval": 30,
+    "idle_timeout": 300
+  },
+  "last_updated": null
+}
