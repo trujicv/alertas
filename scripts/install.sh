@@ -20,10 +20,17 @@ SERVICE_NAME="alertas-ph"
 SERVICE_USER="www-data"
 SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}.service"
 
+# Obtener el directorio actual (donde está el script)
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PROJECT_DIR="$( cd "$SCRIPT_DIR/.." && pwd )"
+
 # Crear directorio de instalación
 echo "[1/7] Creando directorio de instalación..."
 mkdir -p $INSTALL_DIR
-cp -r * $INSTALL_DIR/
+
+# Copiar archivos desde el directorio del proyecto
+echo "Copiando archivos desde $PROJECT_DIR..."
+cp -r "$PROJECT_DIR"/* $INSTALL_DIR/
 cd $INSTALL_DIR
 
 # Instalar dependencias del sistema
@@ -39,23 +46,23 @@ source venv/bin/activate
 # Instalar dependencias de Python
 echo "[4/7] Instalando dependencias de Python..."
 pip install --upgrade pip
-pip install -r backend/requirements.txt
+pip install -r $INSTALL_DIR/backend/requirements.txt
 
 # Crear directorios necesarios
 echo "[5/7] Creando estructura de directorios..."
-mkdir -p backend/data/logs
-mkdir -p backend/static/js
-mkdir -p backend/static/css
+mkdir -p $INSTALL_DIR/backend/data/logs
+mkdir -p $INSTALL_DIR/backend/static/js
+mkdir -p $INSTALL_DIR/backend/static/css
 
 # Configurar permisos
 echo "[6/7] Configurando permisos..."
 chown -R $SERVICE_USER:$SERVICE_USER $INSTALL_DIR
 chmod -R 755 $INSTALL_DIR
-chmod 644 backend/data/config.json
+chmod 644 $INSTALL_DIR/backend/data/config.json
 
 # Instalar servicio systemd
 echo "[7/7] Instalando servicio systemd..."
-cp alertas-ph.service $SERVICE_FILE
+cp $INSTALL_DIR/alertas-ph.service $SERVICE_FILE
 systemctl daemon-reload
 systemctl enable $SERVICE_NAME
 
