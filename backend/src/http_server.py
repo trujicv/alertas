@@ -27,6 +27,12 @@ class HTTPServer:
         self.runner: Optional[web.AppRunner] = None
         self.site: Optional[web.TCPSite] = None
         self.static_dir = Path(__file__).parent.parent / "static"
+        
+        # Verificar que el directorio static existe
+        if not self.static_dir.exists():
+            self.logger.warning(f"Directorio static no encontrado en {self.static_dir}")
+            self.static_dir.mkdir(parents=True, exist_ok=True)
+            self.logger.info(f"Directorio static creado en {self.static_dir}")
     
     async def start(self) -> None:
         """Inicia el servidor HTTP."""
