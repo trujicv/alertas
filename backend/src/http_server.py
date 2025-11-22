@@ -45,14 +45,6 @@ class HTTPServer:
             if js_dir.exists():
                 self.app.router.add_static('/js', js_dir, name='js')
             
-            fonts_dir = self.static_dir / 'fonts'
-            if fonts_dir.exists():
-                self.app.router.add_static('/fonts', fonts_dir, name='fonts', show_index=False)
-            
-            images_dir = self.static_dir / 'images'
-            if images_dir.exists():
-                self.app.router.add_static('/images', images_dir, name='images', show_index=False)
-            
             # Iniciar servidor
             self.runner = web.AppRunner(self.app)
             await self.runner.setup()
