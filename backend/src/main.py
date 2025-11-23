@@ -17,7 +17,6 @@ from websocket_server import WebSocketServer
 from storage_manager import storage
 from schedule_manager import scheduler
 from http_server import HTTPServer
-from test_imap_server import TestIMAPServer
 
 
 class AlertApplication:
@@ -29,7 +28,6 @@ class AlertApplication:
         self.http_server: Optional[HTTPServer] = None
         self.websocket_server: Optional[WebSocketServer] = None
         self.email_monitor: Optional[EmailMonitor] = None
-        self.test_imap_server: Optional[TestIMAPServer] = None
         self._shutdown_event = asyncio.Event()
         
         # Configurar logging
@@ -141,17 +139,6 @@ class AlertApplication:
             activities = scheduler.get_all_activities()
             self.logger.info(f"Actividades registradas: {len(activities)}")
             
-            # Iniciar servidor IMAP de prueba si se usa localhost
-            email_server = config.email.get('server', 'localhost')
-            email_port = config.email.get('port', 1143)
-            
-            if email_server in ['localhost', '127.0.0.1']:
-                self.logger.info(f"Iniciando servidor IMAP de prueba en {email_server}:{email_port}...")
-                self.test_imap_server = TestIMAPServer(host=email_server, port=email_port)
-                self.test_imap_server.start()
-                self.logger.info("✓ Servidor IMAP de prueba iniciado")
-                self.logger.info("  Usuario: test@alertas.local | Contraseña: test123")
-            
             # Inicializar servidor HTTP
             self.logger.info("Inicializando servidor HTTP...")
             self.http_server = HTTPServer(host='0.0.0.0', port=8080)
@@ -196,11 +183,6 @@ class AlertApplication:
         self.logger.info("Iniciando shutdown...")
         
         try:
-            # Detener servidor IMAP de prueba
-            if self.test_imap_server:
-                self.logger.info("Deteniendo servidor IMAP de prueba...")
-                self.test_imap_server.stop()
-            
             # Detener monitor de email
             if self.email_monitor:
                 self.logger.info("Deteniendo monitor de email...")

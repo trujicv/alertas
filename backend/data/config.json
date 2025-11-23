@@ -4,11 +4,11 @@
     "password": "changeme123"
   },
   "email": {
-    "server": "localhost",
-    "port": 1143,
-    "address": "test@alertas.local",
-    "password": "test123",
-    "ssl": false
+    "server": "imap.gmail.com",
+    "port": 993,
+    "address": "",
+    "password": "",
+    "ssl": true
   },
   "websocket": {
     "host": "0.0.0.0",
